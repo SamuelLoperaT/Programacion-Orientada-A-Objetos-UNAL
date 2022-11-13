@@ -5,24 +5,17 @@ import javax.swing.*;
 
 public class VentanaPrincipal extends JFrame implements
       ActionListener {
-   private ListaPersonas lista; // El objeto ListaPersonas de la aplicación
-   private Container contenedor; /*
-                                  * Un contenedor de elementos
-                                  * gráficos
-                                  */
-   // Etiquetas estáticas para los nombres de los atributos
+   private ListaPersonas lista;
+   private Container contenedor;
+
    private JLabel nombre, apellidos, teléfono, dirección;
-   // Campos de ingreso de texto
    private JTextField campoNombre, campoApellidos, campoTeléfono,
          campoDirección;
-   private JButton añadir, eliminar, borrarLista; // Botones
+   private JButton añadir, eliminar, borrarLista;
    private JList listaNombres; // Lista de personas
    private DefaultListModel modelo; // Objeto que modela la lista
    private JScrollPane scrollLista; // Barra de desplazamiento vertical
 
-   /**
-    * Constructor de la clase VentanaPrincipal
-    */
    public VentanaPrincipal() {
       lista = new ListaPersonas(); // Crea la lista de personas
       inicio();
@@ -34,56 +27,29 @@ public class VentanaPrincipal extends JFrame implements
                                     */
       // Establece que el botón de cerrar permitirá salir de la aplicación
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      setResizable(false); /*
-                            * Establece que el tamaño de la ventana no
-                            * se puede cambiar
-                            */
+      setResizable(false);
    }
 
-   /**
-    * Método que crea la ventana con sus diferentes componentes
-    * gráficos
-    */
    private void inicio() {
-      contenedor = getContentPane(); /*
-                                      * Obtiene el panel de
-                                      * contenidos de la ventana
-                                      */
-      contenedor.setLayout(null); /*
-                                   * Establece que el panel no tiene
-                                   * asociado ningún layout
-                                   */
-      // Establece la etiqueta y el campo nombre
+      contenedor = getContentPane();
+
+      contenedor.setLayout(null);
       nombre = new JLabel();
       nombre.setText("Nombre:");
-      nombre.setBounds(20, 20, 135, 23); /*
-                                          * Establece la posición de
-                                          * la etiqueta nombre
-                                          */
+      nombre.setBounds(20, 20, 135, 23);
       campoNombre = new JTextField();
-      // Establece la posición del campo de texto nombre
       campoNombre.setBounds(105, 20, 135, 23);
-      // Establece la etiqueta y el campo apellidos
       apellidos = new JLabel();
-      apellidos.setText("Apellidos:"); /*
-                                        * Establece la posición de la
-                                        * etiqueta apellidos
-                                        */
+      apellidos.setText("Apellidos:");
       apellidos.setBounds(20, 50, 135, 23);
       campoApellidos = new JTextField();
-      // Establece la posición del campo de texto apellidos
       campoApellidos.setBounds(105, 50, 135, 23);
-      // Establece la etiqueta y el campo teléfono
       teléfono = new JLabel();
       teléfono.setText("Teléfono:");
-      teléfono.setBounds(20, 80, 135, 23); /*
-                                            * Establece la posición de
-                                            * la etiqueta teléfono
-                                            */
+      teléfono.setBounds(20, 80, 135, 23);
+
       campoTeléfono = new JTextField();
-      // Establece la posición del campo de texto teléfono
       campoTeléfono.setBounds(105, 80, 135, 23);
-      // Establece la etiqueta y el campo dirección
       dirección = new JLabel();
       dirección.setText("Dirección:");
       dirección.setBounds(20, 110, 135, 23); /*
